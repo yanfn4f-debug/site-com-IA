@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kasane Teto's Bakery 🍞</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff3e6;
+      color: #5a1a1a;
+      overflow-x: hidden;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background: linear-gradient(135deg, #d62828, #ff595e);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 3px 3px 0 #8b1e1e;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    /* PÃES DECORATIVOS */
+    .bread {
+      position: absolute;
+      font-size: 45px;
+      animation: flutuar 4s infinite ease-in-out;
+    }
+
+    .bread1 {
+      left: 8%;
+      top: 20px;
+    }
+
+    .bread2 {
+      right: 10%;
+      top: 70px;
+      animation-delay: 1s;
+    }
+
+    .bread3 {
+      left: 20%;
+      bottom: 10px;
+      animation-delay: 2s;
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(10deg);
+      }
+    }
+
+    /* MENU */
+    nav {
+      background: #8b1e1e;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd166;
+    }
+
+    /* CONTEÚDO */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .teto-emoji {
+      font-size: 100px;
+      margin: 20px;
+    }
+
+    .hero h2 {
+      color: #d62828;
+      font-size: 2rem;
+    }
+
+    /* GALERIA DE PÃES */
+    .galeria {
+      margin-top: 50px;
+    }
+
+    .galeria h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #d62828;
+    }
+
+    .paes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .imagens-teto {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .imagens-teto figure {
+      overflow: hidden;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    }
+
+    .imagens-teto img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
+    .imagens-teto figcaption {
+      padding: 12px;
+      color: #8b1e1e;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) rotate(2deg);
+    }
+
+    .card .emoji {
+      font-size: 70px;
+    }
+
+    .card h3 {
+      margin-top: 15px;
+      color: #8b1e1e;
+    }
+
+    /* CONTADOR */
+    .contador {
+      margin-top: 50px;
+      background: #d62828;
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contador h2 {
+      font-size: 2rem;
+    }
+
+    #numero {
+      display: block;
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 15px;
+      color: #ffd166;
+    }
+
+    button {
+      background: #ffd166;
+      color: #5a1a1a;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    /* RODAPÉ */
+    footer {
+      margin-top: 50px;
+      background: #5a1a1a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="bread bread1">🥖</div>
+    <div class="bread bread2">🍞</div>
+    <div class="bread bread3">🥐</div>
+
+    <h1>🍞 Kasane Teto's Bakery 🍞</h1>
+    <p>O lugar oficial onde a Teto e os pães dominam o mundo!</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#paes">Pães</a>
+    <a href="#contador">Pão-metro</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="teto-emoji">🎤🍞</div>
+
+      <h2>Bem-vindo ao mundo da Kasane Teto!</h2>
+
+      <p>
+        Uma página dedicada à lendária diva Kasane Teto
+        e à sua coleção absolutamente necessária de pães.
+        🥖🍞🥐🍞🥖
+      </p>
+    </section>
+
+    <section class="galeria" id="paes">
+
+      <h2>🍞 A Coleção Suprema de Pães 🍞</h2>
+
+      <div class="imagens-teto">
+        <figure>
+          <img src="IMG/Teto%20pao.jpeg" alt="Kasane Teto com uma baguete">
+          <figcaption>Teto + baguete</figcaption>
+        </figure>
+        <figure>
+          <img src="IMG/My%20beautiful%20creation___.jpeg" alt="Kasane Teto segurando uma baguete gigante">
+          <figcaption>A baguete gigante</figcaption>
+        </figure>
+        <figure>
+          <img src="IMG/1024920827726378617.jpeg" alt="Ilustração chibi da Kasane Teto com um pão">
+          <figcaption>Dupla dinâmica</figcaption>
+        </figure>
+      </div>
+
+      <div class="paes">
+
+        <div class="card">
+          <div class="emoji">🥖</div>
+          <h3>Baguete da Teto</h3>
+          <p>Clássica e poderosa!</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🍞</div>
+          <h3>Pão Vermelho</h3>
+          <p>Inspirado no visual da Teto!</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🥐</div>
+          <h3>Croissant</h3>
+          <p>Crocante e musical!</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🥯</div>
+          <h3>Bagel Supremo</h3>
+          <p>Perfeito para ouvir música!</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🍞🥖</div>
+          <h3>Pão Duplo</h3>
+          <p>Porque um pão não é suficiente.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🥐🍞🥖</div>
+          <h3>Combo Teto</h3>
+          <p>O combo definitivo!</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="contador" id="contador">
+
+      <h2>🍞 Quantos pães você deu para a Teto?</h2>
+
+      <span id="numero">0</span>
+
+      <button onclick="darPao()">DAR UM PÃO PARA A TETO 🥖</button>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>🎤🍞 Kasane Teto's Bakery 🍞🎤</p>
+    <p>Feito por um fã da Teto e uma quantidade preocupante de pães.</p>
+  </footer>
+
+  <script>
+    let paes = 0;
+
+    function darPao() {
+      paes++;
+
+      document.getElementById("numero").textContent = paes;
+
+      if (paes === 10) {
+        alert("🍞 A Teto está MUITO feliz com os pães!");
+      }
+
+      if (paes === 50) {
+        alert("🥖 ALERTA: VOCÊ CRIOU UMA PADARIA INTEIRA!");
+      }
+    }
+  </script>
+
+</body>
+</html>
